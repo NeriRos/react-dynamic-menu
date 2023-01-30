@@ -1,12 +1,40 @@
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 .list {
+  padding: 0;
   position: absolute;
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
   list-style: none;
+  top: 0;
+  left: 100%;
+}
+
+.container > .list {
+  left: 0;
+}
+
+.container > .list > .menuItem > .list {
+  top: 100%;
+  left: -1px;
 }
 
 .list.isSub.hasChildren {
   flex-direction: column;
+}
+
+.list.isSub.isRow {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.menuItem {
+  position: relative;
+  width: 200px;
 }
 
 .list .menuItem {
@@ -14,14 +42,14 @@
   text-align: left;
 }
 
-.isRow {
-  flex-direction: row !important;
-}
-
 .menuItem.isSub {
   display: none;
 }
 
-.menuItem.hover > .list > .menuItem {
+.menuItem:hover > .list > .menuItem {
   display: block;
+}
+
+.menuItem:hover {
+  background: #f6f6f6;
 }

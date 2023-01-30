@@ -37,22 +37,15 @@ export const MenuList = ({ isSub, items = [] }) => {
 };
 
 export const MenuItem = ({ item, isSub }) => {
-  const [isHover, setIsHover] = useState();
   const hasChildren = item.children?.length > 0;
 
   return (
     <li
-      key={item.title}
       className={clsx(
         styles.menuItem,
-        isHover && styles.hover,
         isSub && styles.isSub,
         hasChildren && styles.hasChildren
       )}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={(e) => {
-        setIsHover(false);
-      }}
     >
       <a className={styles.item} href={item.link}>
         {item.title}
