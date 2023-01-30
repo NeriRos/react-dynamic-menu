@@ -1,0 +1,27 @@
+.list {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.list.isSub.hasChildren {
+  flex-direction: column;
+}
+
+.list .menuItem {
+  padding: 10px;
+  text-align: left;
+}
+
+.isRow {
+  flex-direction: row !important;
+}
+
+.menuItem.isSub {
+  display: none;
+}
+
+.menuItem.hover > .list > .menuItem {
+  display: block;
+}
